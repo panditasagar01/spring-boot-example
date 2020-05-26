@@ -1,7 +1,7 @@
-package com.howtodoinjava.rest.dao;
+package com.boot.rest.dao;
 
-import com.howtodoinjava.rest.model.Employee;
-import com.howtodoinjava.rest.model.Employees;
+import com.boot.rest.model.Employee;
+import com.boot.rest.model.Employees;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,7 +1,7 @@
-package com.howtodoinjava.rest.controller;
+package com.boot.rest.controller;
 
-import com.howtodoinjava.rest.dao.EmployeeDAO;
-import com.howtodoinjava.rest.model.Employees;
+import com.boot.rest.dao.EmployeeDAO;
+import com.boot.rest.model.Employees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

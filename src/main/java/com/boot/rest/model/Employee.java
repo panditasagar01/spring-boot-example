@@ -1,4 +1,4 @@
-package com.howtodoinjava.rest.model;
+package com.boot.rest.model;
 
 public class Employee {
 

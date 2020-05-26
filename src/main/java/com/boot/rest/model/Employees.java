@@ -1,4 +1,4 @@
-package com.howtodoinjava.rest.model;
+package com.boot.rest.model;
 
 import java.util.ArrayList;
 import java.util.List;
