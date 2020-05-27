@@ -53,6 +53,10 @@
 						<image>openjdk:8-jdk-alpine</image>
 					</from>
 					<to>
+						<auth>
+							<username>${USERNAME}</username>
+							<password>${PASSWORD}</password>
+						</auth>
 						<image>docker.io/${docker.id}/${project.artifactId}</image>
 						<tags>
 							<tag>${project.version}</tag>
@@ -61,6 +65,7 @@
 					<container>
 						<mainClass>com.boot.rest.SpringBootDemoApplication</mainClass>
 						<user>nobody</user>
+						<port>9091</port>
 					</container>
 				</configuration>
 			</plugin>
