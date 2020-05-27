@@ -65,7 +65,6 @@
 					<container>
 						<mainClass>com.boot.rest.SpringBootDemoApplication</mainClass>
 						<user>nobody</user>
-						<port>9091</port>
 					</container>
 				</configuration>
 			</plugin>
