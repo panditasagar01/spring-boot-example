@@ -28,7 +28,8 @@ pipeline {
       }
       stage('Run Application') {
           steps{
-               bat 'docker run -p 9090:8085 sagar16nov/boot-demo-repo:springbootdemo-0.0.1-SNAPSHOT'
+          bat 'echo testvar =${testVariable}'
+               //bat 'docker run -p 9090:8085 sagar16nov/boot-demo-repo:springbootdemo-0.0.1-SNAPSHOT'
           }
       }
 
