@@ -1,5 +1,7 @@
 pipeline {
-       agent any
+       agent {
+       dockerfile true
+       }
    stages {
       stage('Build') {
          steps{
@@ -9,10 +11,9 @@ pipeline {
          }
          post {
             // If Maven was able to run the tests, even if some of the test
-             // failed, record the test results and archive the jar file.
+             // failed, record the test results.
              success {
                      junit '**/target/surefire-reports/TEST-*.xml'
-                     archiveArtifacts 'target/*.jar'
                      }
                   }
 
