@@ -24,7 +24,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<docker.id>sagar16nov</docker.id>
-		<maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>
 	</properties>
 
 	<dependencies>
@@ -58,7 +57,7 @@
 							<username>${USERNAME}</username>
 							<password>${PASSWORD}</password>
 						</auth>
-						<image>docker.io/${docker.id}/boot-demo-img:${maven.build.timestamp}</image>
+						<image>docker.io/${docker.id}/boot-demo-repo:${project.artifactId}-${project.version}</image>
 					</to>
 					<container>
 						<mainClass>com.boot.rest.SpringBootDemoApplication</mainClass>
