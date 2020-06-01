@@ -26,7 +26,7 @@ pipeline {
       }
       stage('Run Application') {
           steps{
-          bat 'echo test'
+          bat 'echo Sagar from develop branch'
                //bat 'docker run -p 9090:8085 sagar16nov/boot-demo-repo:springbootdemo-0.0.1-SNAPSHOT'
           }
       }
