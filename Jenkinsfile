@@ -31,7 +31,7 @@ pipeline {
       stage('Run Application') {
           steps{
               bat "docker pull $DOCKER_HUB_USER/$CONTAINER_NAME"
-              bat "docker run -d --rm -p $HTTP_PORT:$HTTP_PORT --name $CONTAINER_NAME $DOCKER_HUB_USER/$CONTAINER_NAME:$CONTAINER_TAG"
+              bat "docker run -d --rm -p $HTTP_PORT:8085 --name $CONTAINER_NAME $DOCKER_HUB_USER/$CONTAINER_NAME:$CONTAINER_TAG"
               echo "Application started on port: ${httpPort} (http)"
           }
       }
