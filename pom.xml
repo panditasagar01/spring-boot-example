@@ -57,11 +57,10 @@
 							<username>${USERNAME}</username>
 							<password>${PASSWORD}</password>
 						</auth>
-						<image>docker.io/${docker.id}/boot-demo-repo:${project.artifactId}-${project.version}</image>
+						<image>docker.io/${docker.id}/boot-demo-repo</image>
 					</to>
 					<container>
 						<mainClass>com.boot.rest.SpringBootDemoApplication</mainClass>
-						<user>nobody</user>
 					</container>
 				</configuration>
 			</plugin>

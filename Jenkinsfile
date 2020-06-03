@@ -1,3 +1,7 @@
+def CONTAINER_NAME="boot-demo-repo"
+def CONTAINER_TAG="latest"
+def DOCKER_HUB_USER="sagar16nov"
+def HTTP_PORT="9090"
 pipeline {
        agent any
    stages {
@@ -26,8 +30,9 @@ pipeline {
       }
       stage('Run Application') {
           steps{
-          bat 'echo Sagar from Master Branch'
-               //bat 'docker run -p 9090:8085 sagar16nov/boot-demo-repo:springbootdemo-0.0.1-SNAPSHOT'
+              bat "docker pull $DOCKER_HUB_USER/$CONTAINER_NAME"
+              bat "docker run -d --rm -p $HTTP_PORT:$HTTP_PORT --name $CONTAINER_NAME $DOCKER_HUB_USER/$CONTAINER_NAME:$CONTAINER_TAG"
+              echo "Application started on port: ${httpPort} (http)"
           }
       }
 

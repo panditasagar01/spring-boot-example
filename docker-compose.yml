@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bootdemo :
+    image: sagar16nov/boot-demo-repo
+    container_name: boot_App
+    environment:
+     - server_port=8087
+    ports:
+      - "9090:8087"
+
+# Below command will shut down, pull latest image and run it
+# docker-compose down && docker-compose pull && docker-compose up -d
