@@ -2,7 +2,9 @@ version: "3"
 
 services:
   bootdemo :
-    image: sagar16nov/boot-demo-repo
+    build: .
+    #https://panditasagar01:SUnshine@143@github.com/panditasagar01/spring-boot-example.git
+    image: boot-image
     container_name: boot_App
     environment:
      - server_port=8087

@@ -11,30 +11,23 @@ pipeline {
             git 'https://github.com/panditasagar01/spring-boot-example.git'
             bat 'mvn clean install'
          }
-         post {
-            // If Maven was able to run the tests, even if some of the test
-             // failed, record the test results.
-             success {
-                     junit '**/target/surefire-reports/TEST-*.xml'
-                     }
-                  }
-
       }
       stage('Publish') {
-          steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-                 {
-                    bat 'mvn com.google.cloud.tools:jib-maven-plugin:2.2.0:build'
-                 }
-          }
+         // steps {
+            step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 1, service: 'docker-compose up --build'], useCustomDockerComposeFile: false])
+               // withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+               //  {
+               //     bat 'mvn com.google.cloud.tools:jib-maven-plugin:2.2.0:build'
+              //   }
+        //  }
       }
-      stage('Run Application') {
-          steps{
-              bat "docker pull $DOCKER_HUB_USER/$CONTAINER_NAME"
-              bat "docker run -d --rm -p $HTTP_PORT:8085 --name $CONTAINER_NAME $DOCKER_HUB_USER/$CONTAINER_NAME:$CONTAINER_TAG"
-              echo "Application started on port: ${HTTP_PORT} (http)"
-          }
-      }
+      //stage('Run Application') {
+         // steps{
+             // bat "docker pull $DOCKER_HUB_USER/$CONTAINER_NAME"
+           //   bat "docker run -d --rm -p $HTTP_PORT:8085 --name $CONTAINER_NAME $DOCKER_HUB_USER/$CONTAINER_NAME:$CONTAINER_TAG"
+            //  echo "Application started on port: ${HTTP_PORT} (http)"
+         // }
+     // }
 
    }
 }
