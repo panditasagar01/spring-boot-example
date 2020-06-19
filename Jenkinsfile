@@ -20,7 +20,7 @@ def customImage =''
                  script {
                          customImage = docker.build("boot-image:${env.BUILD_ID}")
                          //customImage.push()
-                         docker run -p 9090:8080 --name boot-container -d customImage
+                         docker run customImage
                         }
           }
       }
