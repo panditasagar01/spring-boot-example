@@ -3,9 +3,7 @@ def CONTAINER_TAG="latest"
 def DOCKER_HUB_USER="sagar16nov"
 def HTTP_PORT="9090"
 pipeline {
-        agent {
-          label 'docker'
-        }
+       agent any
    stages {
       stage('Build') {
          steps{
