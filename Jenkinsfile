@@ -13,13 +13,13 @@ pipeline {
          }
       }
       stage('Publish') {
-         // steps {
+          steps {
             step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 1, service: 'docker-compose up --build'], useCustomDockerComposeFile: false])
                // withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                //  {
                //     bat 'mvn com.google.cloud.tools:jib-maven-plugin:2.2.0:build'
               //   }
-        //  }
+          }
       }
       //stage('Run Application') {
          // steps{
