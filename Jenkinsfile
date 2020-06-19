@@ -13,13 +13,9 @@ def customImage =''
       }
       stage('Build Docker Image') {
           steps {
+          bat "docker-compose down"
+         // bat "docker system prune -f"
           bat "docker-compose up -d"
-                // script {
-                       // bat 'deploy.sh'
-                         //customImage = docker.build("boot-image:${env.BUILD_ID}")
-                         //customImage.push()
-                       // }
-                        //bat label: '', script: 'docker save customImage > exportcustomImage.tar'
           }
       }
    }
