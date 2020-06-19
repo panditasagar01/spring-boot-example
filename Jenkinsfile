@@ -20,7 +20,7 @@ def customImage =''
                  script {
                          customImage = docker.build("boot-image:${env.BUILD_ID}")
                          //customImage.push()
-                         docker run customImage
+                         bat 'docker save -o exportedImage.tar customImage'
                         }
           }
       }
