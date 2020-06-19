@@ -13,7 +13,7 @@ def customImage =''
       }
       stage('Build Docker Image') {
           steps {
-          bat 'docker-compose –f docker-compose.yml UP'
+          bat "docker-compose up -d"
                 // script {
                        // bat 'deploy.sh'
                          //customImage = docker.build("boot-image:${env.BUILD_ID}")
