@@ -4,7 +4,7 @@ services:
   bootdemo :
     build: .
     image: boot-image
-    container_name: boot_App
+    container_name: boot_App1
     environment:
      - server_port=8087
     ports:
