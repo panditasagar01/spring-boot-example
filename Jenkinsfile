@@ -1,7 +1,3 @@
-//def CONTAINER_NAME="boot-demo-repo"
-//def CONTAINER_TAG="latest"
-//def DOCKER_HUB_USER="sagar16nov"
-//def HTTP_PORT="9090"
 pipeline {
 environment{
 def customImage =''
@@ -18,10 +14,11 @@ def customImage =''
       stage('Build Docker Image') {
           steps {
                  script {
-                         customImage = docker.build("boot-image:${env.BUILD_ID}")
+                        bat './deploy.sh'
+                         //customImage = docker.build("boot-image:${env.BUILD_ID}")
                          //customImage.push()
                         }
-                        bat label: '', script: 'docker save customImage > exportcustomImage.tar'
+                        //bat label: '', script: 'docker save customImage > exportcustomImage.tar'
           }
       }
    }
