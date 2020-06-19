@@ -3,7 +3,6 @@ version: "3"
 services:
   bootdemo :
     build: .
-    #https://panditasagar01:SUnshine@143@github.com/panditasagar01/spring-boot-example.git
     image: boot-image
     container_name: boot_App
     environment:
