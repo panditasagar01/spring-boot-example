@@ -3,6 +3,9 @@
 //def DOCKER_HUB_USER="sagar16nov"
 //def HTTP_PORT="9090"
 pipeline {
+environment{
+def customImage =''
+}
        agent any
    stages {
       stage('Build') {
@@ -15,10 +18,11 @@ pipeline {
       stage('Build Docker Image') {
           steps {
                  script {
-                         docker.build("boot-image:${env.BUILD_ID}")
+                         customImage = docker.build("boot-image:${env.BUILD_ID}")
+                         //customImage.push()
+                         docker run -p 9090:8080 --name boot-container -d customImage
                         }
           }
       }
-
    }
 }
