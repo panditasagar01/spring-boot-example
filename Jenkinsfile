@@ -13,11 +13,11 @@ def customImage =''
       }
       stage('Build Docker Image') {
           steps {
-                 script {
+                // script {
                         bat './deploy.sh'
                          //customImage = docker.build("boot-image:${env.BUILD_ID}")
                          //customImage.push()
-                        }
+                       // }
                         //bat label: '', script: 'docker save customImage > exportcustomImage.tar'
           }
       }
