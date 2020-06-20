@@ -11,7 +11,7 @@ def customImage =''
             bat 'mvn clean install'
          }
       }
-      stage('Build Docker Image') {
+      stage('Build & Run Container') {
           steps {
           bat "docker-compose down"
           bat "docker system prune -f"
