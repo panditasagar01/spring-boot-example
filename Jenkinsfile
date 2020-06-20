@@ -14,7 +14,7 @@ def customImage =''
       stage('Build & Run Container') {
           steps {
           bat "docker-compose down"
-          bat "docker system prune -f"
+        //  bat "docker system prune -f"
           bat "docker-compose up -d"
           }
       }
