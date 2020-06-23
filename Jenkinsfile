@@ -1,12 +1,12 @@
 pipeline {
        agent any
-       properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['dev', 'qa', 'prd'], description: 'The target environment level', name: 'DEPLOY_ENV_LVL')])])   stages {
+   properties([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['dev', 'qa', 'prd'], description: 'The target environment level', name: 'DEPLOY_ENV_LVL')])])
 
    stages {
       stage('Build') {
          steps{
-         echo "DEPLOY_ENV_LVL: ${params.DEPLOY_ENV_LVL}"
-            // Fetch code from a GitHub repository
+            echo "DEPLOY_ENV_LVL: ${params.DEPLOY_ENV_LVL}"
+                        // Fetch code from a GitHub repository
                      if(params.DEPLOY_ENV_LVL == "dev"){
                          git 'https://github.com/panditasagar01/spring-boot-example.git', branch: "master"
                      }
