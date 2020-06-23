@@ -8,9 +8,12 @@ pipeline {
          steps{
             echo "DEPLOY_ENV_LVL: ${params.DEPLOY_ENV_LVL}"
                         // Fetch code from a GitHub repository
-                     if("${DEPLOY_ENV_LVL}" == "dev"){
-                         git 'https://github.com/panditasagar01/spring-boot-example.git', branch: "master"
-                     }
+                        script{
+                               if("${DEPLOY_ENV_LVL}" == "dev"){
+                                   git 'https://github.com/panditasagar01/spring-boot-example.git', branch: "master"
+                               }
+                        }
+
 
             bat 'mvn clean install'
          }
