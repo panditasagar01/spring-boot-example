@@ -10,7 +10,7 @@ pipeline {
                         // Fetch code from a GitHub repository
                         script{
                                if("${DEPLOY_ENV_LVL}" == "dev"){
-                                   git 'https://github.com/panditasagar01/spring-boot-example.git', branch: "master"
+                                   git 'https://github.com/panditasagar01/spring-boot-example.git'
                                }
                         }
 
